@@ -5,17 +5,41 @@
 <p>網站倉儲: h<a href="https://github.com/41023247/cp2021_hw">https://github.com/41023247/cp2021_hw</a></p>
 <p>網站連結: <a href="https://41023247.github.io/cp2021_hw/">https://41023247.github.io/cp2021_hw/</a></p>
 <p>其他與個人或作業相關資料說明或介紹</p><h1>HW1</h1>
-<p>HW1 - 網際動畫與 touch typing 佔學期成績 20%.</p>
-<p><span style="background-color: #ffff99;">HW1 必須在 2021.10.20 22:00 之前完成</span>.</p>
-<p><a href="https://github.com/mdecourse/cp2021/discussions/8">HW1 具體項目成果回報區</a>將於 2021.09.23 開啟, 於 <span style="background-color: #ff99cc;">2021.10.20 22:00 關閉</span></p>
-<ol>
-<li>請至 <a href="https://github.com">https://github.com</a> 申請 Github 帳號後, 至 <a href="https://mde.tw/cp2021/content/Task1.html">https://mde.tw/cp2021/content/Task1.html</a>  頁面, 將左右碰撞移動的紅色方塊, 改為先移動到水平畫面中心點位置後, 接著上下碰撞移動.</li>
-<li>請將 1. 的程式碼存入個人 Gist 區 (<a href="https://docs.github.com/en/github/writing-on-github/editing-and-sharing-content-with-gists/creating-gists">說明</a>).</li>
-<li>請在 1. 的程式中, 加入與 <a href="https://mde.tw/cp2021/content/Cango.html">Cango 頁面</a> Fourbar 程式碼相同功能的啟動按鈕, 讓使用者可以利用按鈕啟動或中斷紅色方塊上下碰撞移動. 完成後請將程式碼存入個人 Gist 區.</li>
-<li>請在 Gist 檔案編輯區, 利用鍵盤輸入 <a href="https://docs.github.com/en/github/writing-on-github/editing-and-sharing-content-with-gists/creating-gists#about-gists">https://docs.github.com/en/github/writing-on-github/editing-and-sharing-content-with-gists/creating-gists#about-gists</a> 中的這段英文內容, 請利用手機計時, 大概需要多少時間? 請將此段練習打字的內容與所需時間存入 Gist 檔案中.</li>
-<li>請至少練習 key in 這段英文內容三次, 然後看看是否已經了解如何透過電腦鍵盤 touch typing?</li>
-<li>接下來請利用中文輸入 <a href="https://ithelp.ithome.com.tw/articles/10206233">https://ithelp.ithome.com.tw/articles/10206233</a> 的第一段中文說明, 請利用手機計時, 大概需要多少時間?</li>
-</ol>
+<p><a href="https://gist.githubusercontent.com/41023247/1137b0ec4cdc675103ecb156a23b4168/raw/855fe1c8c886cd1ccce25637cc72aef904b65bdb/hw1">紅色方塊移動(無按鈕)</a></p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false"></pre>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">from browser import html
+from browser import document as doc
+import browser.timer
+
+canvas = html.CANVAS(width = 400, height = 100)
+canvas.id = "game-board3"
+brython_div = doc["brython_div3"]
+brython_div &lt;= canvas
+ctx = canvas.getContext("2d")
+px = 0
+py = 50
+width = 20
+height = 20
+speed = 2
+
+def game():
+    global px, py, width, height, speed
+    ctx.clearRect(px, py, width, height)
+    ctx.fillStyle = "red"
+    px += 1
+    if  (px + width) &gt; 200:
+        px+=-1
+    if  (px + width) &gt; 199.99999:    
+        py+=speed
+    
+    if py &lt; 0 or (py + height) &gt; canvas.height:
+        speed = -speed
+    ctx.fillRect(px, py, width, height)
+    
+    
+    ctx.fillRect(px, py, width, height)
+    
+browser.timer.set_interval(game, 10)</pre>
 <p></p><h1>HW2</h1>
 <p>HW2 - 可攜程式系統與個人網站佔學期成績 20%.</p>
 <p><span style="background-color: #ffff99;">HW2 必須在 2021.11.03 22:00 之前完成.</span></p>
