@@ -128,7 +128,7 @@ img.add_border {
                             <li><a href="./../blog/index.html">blog</a></li>
                         </ul>
                       </li>
-                     <li><a href='About.html'>About</a><li><a href='HW1.html'>HW1</a><li class='has-children'><a href='HW2.html'>HW2</a><ul class='dropdown'><li><a href='run.html'>run</a></li></ul><li><a href='HW3.html'>HW3</a><li><a href='Final Project.html'>Final Project</a></li>
+                     <li><a href='About.html'>About</a><li class='has-children'><a href='HW1.html'>HW1</a><ul class='dropdown'><li><a href='run1.html'>run1</a></li></ul><li class='has-children'><a href='HW2.html'>HW2</a><ul class='dropdown'><li><a href='run.html'>run</a></li></ul><li><a href='HW3.html'>HW3</a><li><a href='Final Project.html'>Final Project</a></li>
                       </ul>
                 </nav>
               </div>
@@ -139,7 +139,11 @@ img.add_border {
           </div>
           
         </header>
-    <div id="tipue_search_content">About << <a href='About.html'>Previous</a> <a href='HW2.html'>Next</a> >> HW2<br /><h1>HW1</h1>
+    <div id="tipue_search_content">About << <a href='About.html'>Previous</a> <a href='run1.html'>Next</a> >> run1<br /><h1>HW1</h1>
+<p><a href="https://gist.githubusercontent.com/41023247/1137b0ec4cdc675103ecb156a23b4168/raw/855fe1c8c886cd1ccce25637cc72aef904b65bdb/hw1">紅色方塊移動(無按鈕)</a></p>
+<p></p>
+<script type="text/python3">
+<h1>HW1</h1>
 <p><a href="https://gist.githubusercontent.com/41023247/1137b0ec4cdc675103ecb156a23b4168/raw/855fe1c8c886cd1ccce25637cc72aef904b65bdb/hw1">紅色方塊移動(無按鈕)</a></p>
 <pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false"></pre>
 <pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">from browser import html
@@ -177,7 +181,151 @@ def game():
 browser.timer.set_interval(game, 10)</pre>
 <p></p>
 <p><a href="https://gist.githubusercontent.com/41023247/9c28dfbfa07f5ca4cba13a591dc0506a/raw/3cf87a11d45d30a1eb59cdf4791fd939a494727b/gistfile1.txt">打字(中)</a></p>
-<p><a href="https://gist.githubusercontent.com/41023247/380feac41b1af89b0644082aa0481a31/raw/8679f56c0e3f10ae56cf2f33603be53fea30b623/gistfile1.txt">打字(英)</a></p><br />About << <a href='About.html'>Previous</a> <a href='HW2.html'>Next</a> >> HW2</div>
+<p><a href="https://gist.githubusercontent.com/41023247/380feac41b1af89b0644082aa0481a31/raw/8679f56c0e3f10ae56cf2f33603be53fea30b623/gistfile1.txt">打字(英)</a></p>
+</script>
+<p>
+<script type="text/python3">
+<h1>HW1</h1>
+<p><a href="https://gist.githubusercontent.com/41023247/1137b0ec4cdc675103ecb156a23b4168/raw/855fe1c8c886cd1ccce25637cc72aef904b65bdb/hw1">紅色方塊移動(無按鈕)</a></p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false"></pre>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">from browser import html
+from browser import document as doc
+import browser.timer
+
+canvas = html.CANVAS(width = 400, height = 100)
+canvas.id = "game-board3"
+brython_div = doc["brython_div3"]
+brython_div &lt;= canvas
+ctx = canvas.getContext("2d")
+px = 0
+py = 50
+width = 20
+height = 20
+speed = 2
+
+def game():
+    global px, py, width, height, speed
+    ctx.clearRect(px, py, width, height)
+    ctx.fillStyle = "red"
+    px += 1
+    if  (px + width) &gt; 200:
+        px+=-1
+    if  (px + width) &gt; 199.99999:    
+        py+=speed
+    
+    if py &lt; 0 or (py + height) &gt; canvas.height:
+        speed = -speed
+    ctx.fillRect(px, py, width, height)
+    
+    
+    ctx.fillRect(px, py, width, height)
+    
+browser.timer.set_interval(game, 10)</pre>
+<p></p>
+<p><a href="https://gist.githubusercontent.com/41023247/9c28dfbfa07f5ca4cba13a591dc0506a/raw/3cf87a11d45d30a1eb59cdf4791fd939a494727b/gistfile1.txt">打字(中)</a></p>
+<p><a href="https://gist.githubusercontent.com/41023247/380feac41b1af89b0644082aa0481a31/raw/8679f56c0e3f10ae56cf2f33603be53fea30b623/gistfile1.txt">打字(英)</a></p>
+</script>
+</p>
+<p><!-- 印出程式1--></p>
+<script type="text/javascript">
+function doSave(storage_id, filename){
+    var blob = new Blob([localStorage[storage_id]], {type: "text/plain;charset=utf-8"});
+    filename = document.getElementById(filename).value
+    saveAs(blob, filename+".py");
+}
+</script>
+<p>
+<script type="text/javascript">
+function doSave(storage_id, filename){
+    var blob = new Blob([localStorage[storage_id]], {type: "text/plain;charset=utf-8"});
+    filename = document.getElementById(filename).value
+    saveAs(blob, filename+".py");
+}
+</script>
+</p>
+<p><!-- 請注意, 這裡使用 Javascript 將 localStorage["py_src"] 中存在近端瀏覽器的程式碼, 由使用者決定存檔名稱--></p>
+<script src="/get_page/cmsimde/static/ace/snippets/python.js" type="text/javascript"></script>
+<script src="/get_page/cmsimde/static/ace/mode-python3.js" type="text/javascript"></script>
+<script src="/get_page/cmsimde/static/ace/ext-language_tools.js" type="text/javascript"></script>
+<script src="/get_page/cmsimde/static/ace/ace.js" type="text/javascript"></script>
+<p>
+<script src="/get_page/cmsimde/static/ace/ace.js" type="text/javascript"></script>
+<script src="/get_page/cmsimde/static/ace/ext-language_tools.js" type="text/javascript"></script>
+<script src="/get_page/cmsimde/static/ace/mode-python3.js" type="text/javascript"></script>
+<script src="/get_page/cmsimde/static/ace/snippets/python.js" type="text/javascript"></script>
+</p>
+<p><!-- 導入 ace --></p>
+<script src="/get_page/cmsimde/static/ace/filereader.js" type="text/javascript"></script>
+<script src="/get_page/cmsimde/static/ace/FileSaver.min.js" type="text/javascript"></script>
+<p>
+<script src="/get_page/cmsimde/static/ace/FileSaver.min.js" type="text/javascript"></script>
+<script src="/get_page/cmsimde/static/ace/filereader.js" type="text/javascript"></script>
+</p>
+<p><!-- 導入 FileSaver 與 filereader --></p>
+<script>
+window.onload=function(){
+brython({debug:1, pythonpath:['./../cmsimde/static/','./../downloads/py/']});
+}
+</script>
+<script src="/get_page/cmsimde/static/konva.min.js"></script>
+<p>
+<script src="/get_page/cmsimde/static/konva.min.js"></script>
+<script>
+window.onload=function(){
+brython({debug:1, pythonpath:['./../cmsimde/static/','./../downloads/py/']});
+}
+</script>
+</p>
+<script src="/get_page/cmsimde/static/gearUtils-05.js"></script>
+<script src="/get_page/cmsimde/static/CangoAxes-4v01-min.js"></script>
+<script src="/get_page/cmsimde/static/Cango-13v08-min.js"></script>
+<p>
+<script src="/get_page/cmsimde/static/Cango-13v08-min.js"></script>
+<script src="/get_page/cmsimde/static/CangoAxes-4v01-min.js"></script>
+<script src="/get_page/cmsimde/static/gearUtils-05.js"></script>
+</p>
+<script src="/get_page/downloads/brython_modules.js"></script>
+<p>
+<script src="/get_page/downloads/brython_modules.js"></script>
+</p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false"></pre>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">from browser import html
+from browser import document as doc
+import browser.timer
+
+canvas = html.CANVAS(width = 400, height = 100)
+canvas.id = "game-board3"
+brython_div = doc["brython_div3"]
+brython_div &lt;= canvas
+ctx = canvas.getContext("2d")
+px = 0
+py = 50
+width = 20
+height = 20
+speed = 2
+
+def game():
+    global px, py, width, height, speed
+    ctx.clearRect(px, py, width, height)
+    ctx.fillStyle = "red"
+    px += 1
+    if  (px + width) &gt; 200:
+        px+=-1
+    if  (px + width) &gt; 199.99999:    
+        py+=speed
+    
+    if py &lt; 0 or (py + height) &gt; canvas.height:
+        speed = -speed
+    ctx.fillRect(px, py, width, height)
+    
+    
+    ctx.fillRect(px, py, width, height)
+    
+browser.timer.set_interval(game, 10)</pre>
+<p></p>
+<p><a href="https://gist.githubusercontent.com/41023247/9c28dfbfa07f5ca4cba13a591dc0506a/raw/3cf87a11d45d30a1eb59cdf4791fd939a494727b/gistfile1.txt">打字(中)</a></p>
+<p><a href="https://gist.githubusercontent.com/41023247/380feac41b1af89b0644082aa0481a31/raw/8679f56c0e3f10ae56cf2f33603be53fea30b623/gistfile1.txt">打字(英)</a></p>
+<br />About << <a href='About.html'>Previous</a> <a href='run1.html'>Next</a> >> run1</div>
         
     <!-- footer -->
       <div class="container">
