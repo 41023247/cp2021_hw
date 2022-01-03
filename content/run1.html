@@ -182,7 +182,7 @@ function doSave(storage_id, filename){
 <script src="https://mde.tw/cp2021/cmsimde/static/sylvester.js"></script>
 <script src="https://mde.tw/cp2021/cmsimde/static/PrairieDraw.js"></script>
 </p>
-<p><button id="add1to100">add 1 to 100</button><button id="p261">p261</button><button id="rocflag">ROC flag</button><button id="red">red</button><button id="snake1">snake1</button></p>
+<p><button id="add1to100">add 1 to 100</button><button id="p261">p261</button><button id="rocflag">ROC flag</button><button id="red">red</button><button id="snake1">snake1</button><button id="snake2">snake2</button></p>
 <p><!-- ######################  editor1 開始 ###################### --></p>
 <p><!-- 用來顯示程式碼的 editor 區域 --></p>
 <div id="kw_editor1" style="width: 600px; height: 300px;"></div>
@@ -286,6 +286,11 @@ doc["red"].bind("click", red.do)
 snake1_url = "https://gist.githubusercontent.com/41023247/61063080a76cb29f935ee7b80be94dac/raw/50a5c3598c00a1f9f98eb33ec00d97b340d9e398/HW3"
 snake1 = button2(snake1_url)
 doc["snake1"].bind("click",snake1.do)
+################################## rocflag end
+################################## rocflag start
+snake2_url = "https://gist.githubusercontent.com/41023247/d3d09e3e438a640bac84aafef4d52283/raw/910fa38a0821b16fa9e1dd2d0c385a720438c12e/gistfile1.txt"
+snake2 = button2(snake2_url)
+doc["snake2"].bind("click",snake2.do)
 ################################## rocflag end
 </script>
 </p><br />HW1 << <a href='HW1.html'>Previous</a> <a href='HW2.html'>Next</a> >> HW2</div>
